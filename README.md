@@ -6,24 +6,24 @@ This repo contains code samples for the Passwordless Login with Facebook Account
 
 Facebook Account Kit requires that you have a Facebook Developer Account with a registered app that has Account Kit enabled.
 
-1) Run `npm install` to install dependencies (NodeJs is a prerequisite)
-2) Open the `server.js` file
-3) Replace `YOUR_FACEBOOK_APP_ID` and `YOUR_ACCOUNT_KIT_SECRET` with your credentials
-4) Open the `login.html` file in the `/dist` directory
-5) Replace `YOUR_FACEBOOK_APP_ID` with your credentials
-6) Run the app executing `node server`
-7) Navigate to `localhost:3000` to see the app
+1. Run `npm install` to install dependencies (NodeJs is a prerequisite)
+2. Open the `server.js` file
+3. Replace `YOUR_FACEBOOK_APP_ID` and `YOUR_ACCOUNT_KIT_SECRET` with your credentials
+4. Open the `login.html` file in the `/dist` directory
+5. Replace `YOUR_FACEBOOK_APP_ID` with your credentials
+6. Run the app executing `node server`
+7. Navigate to `localhost:3000` to see the app
 
 
 ## Setup Instructions: Auth0 Lock Passwordless
 
 Auth0 Lock Passwordless requires that you have an Auth0 account. [Sign up](https://auth0.com) for free if you don't.
 
-1) Run `npm install` to install dependencies (NodeJs is a prerequisite)
-2) Open the `login.html` and `callback.html` pages
-3) Replace `AUTH0_CLIENT_ID`, `AUTH0_DOMAIN` and `AUTH0_CALLBACKURL` with your credentials in each of the pages
-4) Run the app by executing `node server` from the terminal
-5) Navigate to `localhost:3000` to see the app
+1. Run `npm install` to install dependencies (NodeJs is a prerequisite)
+2. Open the `login.html` and `callback.html` pages
+3. Replace `AUTH0_CLIENT_ID`, `AUTH0_DOMAIN` and `AUTH0_CALLBACKURL` with your credentials in each of the pages
+4. Run the app by executing `node server` from the terminal
+5. Navigate to `localhost:3000` to see the app
 
 ## What is Auth0?
 
