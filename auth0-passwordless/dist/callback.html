@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Password Free: Facebook Account Kit</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">
+		<style>
+			body {
+				text-align: center;
+				background: #EEE;
+			}
+			.mdl-button {
+				width: 100%;
+			}
+		</style>
+		<script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+		
+<script src="http://cdn.auth0.com/js/lock-passwordless-2.2.3.min.js"></script>
+	</head>
+	<body>
+
+		<div class="mdl-grid">
+		  <div class="mdl-cell mdl-cell--4-col mdl-cell--4-offset">
+		  	<div class="mdl-card mdl-shadow--2dp">
+		  	<div class="mdl-card__supporting-text">
+		  	<h1 class="mdl-typography--title">Passwordless Authentication</h1>
+		  	<h2 class="mdl-typography--subhead">You're In!</h2>
+		  	<p><strong>Details:</strong></p>
+		  	<ul class="demo-list-icon mdl-list">
+			  <li class="mdl-list__item">
+			    <span class="mdl-list__item-primary-content">
+			      <i class="material-icons mdl-list__item-icon">fingerprint</i>
+    			  <span id="person"></span>
+			    </span>
+			  </li>
+			  <li class="mdl-list__item">
+			    <span class="mdl-list__item-primary-content">
+			      <i class="material-icons mdl-list__item-icon">face</i>
+    			  <span id="nickname"></span>
+			    </span>
+			  </li>
+			  <li class="mdl-list__item">
+			    <span class="mdl-list__item-primary-content">
+			      <i class="material-icons mdl-list__item-icon">person</i>
+    			  <span id="user_id"></span>
+			    </span>
+			  </li>
+			  <li class="mdl-list__item">
+			    <span class="mdl-list__item-primary-content">
+			      <button onclick="goToLogin()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-typography--text-center">Try Another</button>
+			    </span>
+			  </li>
+			</ul>
+		  	</div>
+		  	</div>
+		  </div>
+		</div>
+
+		<script>
+		  var AUTH0_CLIENT_ID = 'AUTH0_CLIENT_ID';
+		  var AUTH0_DOMAIN = 'AUTH0_DOMAIN';
+		  var AUTH0_CALLBACKURL = 'AUTH0_CALLBACKURL';
+		  
+		  var lock = new Auth0LockPasswordless(AUTH0_CLIENT_ID, AUTH0_DOMAIN);
+		  var token = lock.parseHash(window.location.hash);
+		  lock.getProfile(token.id_token, function(error, profile) {
+		    if (!error) {
+		      document.getElementById("person").innerHTML = profile.name;
+		      document.getElementById("nickname").innerHTML = profile.nickname;
+		      document.getElementById("user_id").innerHTML = profile.user_id;
+		    }
+		  });
+
+		  function goToLogin(){
+		  	window.location.href = "/";
+		  }
+		</script>
+	</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "name": "FacebookAccountKitPasswordless",
+  "version": "1.0.0",
+  "dependencies": {
+    "express": "3.x",
+    "mustache": "^2.2.1"
+  }
+}

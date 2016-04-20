@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AccountKitJS App</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">
+		<style>
+			body {
+				text-align: center;
+				background: #EEE;
+			}
+			.mdl-button {
+				width: 100%;
+			}
+		</style>
+		<script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+</head>
+
+<body>
+  <div class="mdl-grid">
+	  <div class="mdl-cell mdl-cell--4-col mdl-cell--4-offset">
+	  	<div class="mdl-card mdl-shadow--2dp">
+	  	<div class="mdl-card__supporting-text">
+	  	<h1 class="mdl-typography--title">Passwordless Authentication</h1>
+	  	<h2 class="mdl-typography--subhead">You're In!</h2>
+	  	<p><strong>Details:</strong></p>
+		  	<ul class="demo-list-icon mdl-list">
+			  <li class="mdl-list__item">
+			    <span class="mdl-list__item-primary-content">
+			      <i class="material-icons mdl-list__item-icon">fingerprint</i>
+    			  <span id="token">{{method}}</span>
+			    </span>
+			  </li>
+			  <li class="mdl-list__item">
+			    <span class="mdl-list__item-primary-content">
+			      <i class="material-icons mdl-list__item-icon">face</i>
+    			  <span id="nickname">{{identity}}</span>
+			    </span>
+			  </li>
+			  <li class="mdl-list__item">
+			    <span class="mdl-list__item-primary-content">
+			      <i class="material-icons mdl-list__item-icon">person</i>
+    			  <span id="user_id">{{user_id}}</span>
+			    </span>
+			  </li>
+			  <li class="mdl-list__item">
+			    <span class="mdl-list__item-primary-content">
+			      <button onclick="goToLogin()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored mdl-typography--text-center">Try Another</button>
+			    </span>
+			  </li>
+			</ul>
+	  	</div>
+	  	</div>
+	  </div>
+	</div>
+
+	<script>
+      function goToLogin(){
+	    window.location.href = "/";
+	  }
+	</script>
+
+</body>
+</html>
