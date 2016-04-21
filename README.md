@@ -1,6 +1,6 @@
 # Passwordless Authentication Samples
 
-This repo contains code samples for the Passwordless Login with Facebook Account Kit article from the Auth0 blog. There are two NodeJs apps, one for Facebook Account Kit and the other for Auth0 Lock Passwordless showing how you can add passwordless authentication in each.
+This repo contains code samples for the Passwordless Login with Facebook Account Kit article from the Auth0 blog. There are two NodeJs apps, one for Facebook Account Kit and the other for Auth0 Passwordless showing how you can add passwordless authentication in each.
 
 ## Setup Instructions: Facebook Account Kit
 
@@ -15,9 +15,9 @@ Facebook Account Kit requires that you have a Facebook Developer Account with a 
 7. Navigate to `localhost:3000` to see the app
 
 
-## Setup Instructions: Auth0 Lock Passwordless
+## Setup Instructions: Auth0 Passwordless
 
-Auth0 Lock Passwordless requires that you have an Auth0 account. [Sign up](https://auth0.com) for free if you don't.
+Auth0 Passwordless requires that you have an Auth0 account. [Sign up](https://auth0.com) for free if you don't.
 
 1. Run `npm install` to install dependencies (NodeJs is a prerequisite)
 2. Open the `login.html` and `callback.html` pages
