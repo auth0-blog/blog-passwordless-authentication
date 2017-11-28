@@ -15,7 +15,7 @@
 		</style>
 		<script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
 		
-<script src="http://cdn.auth0.com/js/lock-passwordless-2.2.3.min.js"></script>
+		<script src="http://cdn.auth0.com/js/auth0/9.0.0-beta.6/auth0.min.js"></script>
 	</head>
 	<body>
 
@@ -60,16 +60,24 @@
 		  var AUTH0_CLIENT_ID = 'AUTH0_CLIENT_ID';
 		  var AUTH0_DOMAIN = 'AUTH0_DOMAIN';
 		  var AUTH0_CALLBACKURL = 'AUTH0_CALLBACKURL';
-		  
-		  var lock = new Auth0LockPasswordless(AUTH0_CLIENT_ID, AUTH0_DOMAIN);
-		  var token = lock.parseHash(window.location.hash);
-		  lock.getProfile(token.id_token, function(error, profile) {
-		    if (!error) {
-		      document.getElementById("person").innerHTML = profile.name;
-		      document.getElementById("nickname").innerHTML = profile.nickname;
-		      document.getElementById("user_id").innerHTML = profile.user_id;
-		    }
-		  });
+			
+			var auth0 = new window.auth0.WebAuth({
+				domain: AUTH0_DOMAIN,
+				clientID: AUTH0_CLIENT_ID,
+				redirectUri: AUTH0_CALLBACKURL,
+				responseType: 'token'
+			});
+
+			auth0.parseHash(function(err, result) {
+				console.log(err);
+				auth0.client.userInfo(result.accessToken, function(err2, user) {
+					console.log(err2);
+					console.log(user);
+					document.getElementById("person").innerHTML = user.name;
+		      document.getElementById("nickname").innerHTML = user.nickname;
+		      document.getElementById("user_id").innerHTML = user.sub;
+				})
+			});
 
 		  function goToLogin(){
 		  	window.location.href = "/";
